@@ -39,7 +39,7 @@ pipeline {
 
           stage("Docker login") {
                steps {
-                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub-credentials',
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub',
                                usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
                          sh "docker login --username $USERNAME --password $PASSWORD"
                     }
@@ -48,13 +48,13 @@ pipeline {
 
           stage("Docker push") {
                steps {
-                    sh "docker push leszko/calculator:${BUILD_TIMESTAMP}"
+                    sh "docker push leszko/calculator:${BUILD_NUMBER}"
                }
           }
 
           stage("Update version") {
                steps {
-                    sh "sed  -i 's/{{VERSION}}/${BUILD_TIMESTAMP}/g' calculator.yaml"
+                    sh "sed  -i 's/{{VERSION}}/${BUILD_NUMBER}/g' calculator.yaml"
                }
           }
           
