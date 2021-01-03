@@ -73,18 +73,18 @@ pipeline {
                }
           }
 
-          stage("Release") {
+          /* stage("Release") {
                steps {
                     sh "kubectl config use-context production"
                     sh "kubectl apply -f hazelcast.yaml"
                     sh "kubectl apply -f calculator.yaml"
                }
-          }
-          stage("Smoke test") {
+          }*/
+          /* stage("Smoke test") {
               steps {
                   sleep 60
                   sh "chmod +x smoke-test.sh && ./smoke-test.sh"
               }
-          }
+          }*/
      }
 }
