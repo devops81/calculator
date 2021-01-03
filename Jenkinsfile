@@ -48,7 +48,7 @@ pipeline {
 
           stage("Docker push") {
                steps {
-                    sh "docker push leszko/calculator:${BUILD_NUMBER}"
+                    sh "docker push devops81/calculator:${BUILD_NUMBER}"
                }
           }
 
