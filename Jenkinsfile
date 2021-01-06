@@ -66,12 +66,12 @@ pipeline {
                }
           }*/
 
-          stage("Acceptance test") {
+          /*stage("Acceptance test") {
                steps {
                     sleep 60
                     sh "chmod +x acceptance-test.sh && ./acceptance-test.sh"
                }
-          }
+          }*/
 
           /* stage("Release") {
                steps {
