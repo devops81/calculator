@@ -86,5 +86,12 @@ pipeline {
                   sh "chmod +x smoke-test.sh && ./smoke-test.sh"
               }
           }*/
+          stage("Publish HTML Report")
+          {
+               steps
+               {
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests/test', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'TESTRESULT'])
+               }
+          }
      }
 }
