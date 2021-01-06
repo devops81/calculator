@@ -90,7 +90,7 @@ pipeline {
           {
                steps
                {
-               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests/test', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'TESTRESULT'])
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, includes: '*/*.html,**/*.css', keepAll: false, reportDir: 'build/reports/tests/test', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
                }
           }
      }
