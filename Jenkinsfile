@@ -99,19 +99,20 @@ pipeline {
           always {
             echo 'One way or another, I have finished'
             
-                emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
+            mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "devops81@gmail.com";   
         }
         success {
-           emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
+           mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "devops81@gmail.com";   
+           
         }
         unstable {
-            emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
+            mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "devops81@gmail.com";   
         }
         failure {
-             emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
+             mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "devops81@gmail.com";   
         }
         changed {
-            emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
+            mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "devops81@gmail.com";   
         }
           }
 }
