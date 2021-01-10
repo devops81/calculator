@@ -98,19 +98,20 @@ pipeline {
      post {
           always {
             echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
+            
+                emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
         }
         success {
-            echo 'I succeeded!'
+           emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
         }
         unstable {
-            echo 'I am unstable :/'
+            emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
         }
         failure {
-            echo 'I failed :('
+             emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
         }
         changed {
-            echo 'Things were different before...'
+            emailext body: '', subject: 'Pipeline-Calc', to: 'devops81@gmail.com'
         }
           }
 }
